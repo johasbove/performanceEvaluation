@@ -1,0 +1,31 @@
+<div class="container margin-top">
+  <div class="row">
+    <h1>Colaboradores</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Familia de Metas</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td> <%= user.name %> </td>
+              <td> <%= user.family_goal.family_name %> </td>
+              <td>
+                <%= link_to user_path(user), class: "btn btn-primary", role: "button" do %>
+                  Detalle
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
