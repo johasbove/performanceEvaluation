@@ -1,24 +1,25 @@
-# README
+# Performance Evaluation App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Se debe levantar la app backend, luego la app frontend y visitar http://localhost:8080
 
-Things you may want to cover:
+## Versión de Ruby
+2.5.0
 
-* Ruby version
+## Comandos a seguir:
 
-* System dependencies
+### Para backend:
 
-* Configuration
+```bash
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+$ rails s
+```
 
-* Database creation
+### Para frontend:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$ npm install
+$ npm run serve
+```
