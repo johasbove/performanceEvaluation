@@ -2,19 +2,17 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    # @users = User.all # To use with rails views
     @users = User.all.as_json(include:
-              { family_goal: {only: :family_name} },
-              only: :name)
+              { family_goal: {only: [:id, :family_name]} },
+              only: [:id, :name])
     render json: @users, status: :ok
   end
 
   def show
-    # @user = User.find(params[:id]) # To use with rails views
     @user = User.find(params[:id]).as_json(include:
               { family_goal:
-                {only: [:area, :world, :position, :family_name]}
-              }, only: :name)
+                {only: [:id, :area, :world, :position, :family_name]}
+              }, only: [:id, :name])
     render json: @user, status: :ok
   end
 
