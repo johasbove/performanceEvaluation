@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # OJO NO debe ser sensible a mayúsculas ni a espacios)
     @user = User.create_with_family_association user_params
     render json: @user, status: :ok
   rescue ActiveRecord::RecordNotFound => e
